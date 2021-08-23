@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Autofac.Extensions.DependencyInjection;
+using Serilog;
 
 namespace fattestSecret.Api
 {
@@ -13,14 +11,22 @@ namespace fattestSecret.Api
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var isService = args.Contains("--windows-service");
+            var builder = CreateWebHostBuilder(args);
+            if (isService)
+            {
+                builder.UseWindowsService();
+            }
+            var host = builder.Build();
+            host.Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+        public static IHostBuilder CreateWebHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            }).UseServiceProviderFactory(new AutofacServiceProviderFactory()).UseSerilog((context, c) => c.ReadFrom.Configuration(context.Configuration));
+        }
     }
 }

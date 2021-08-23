@@ -4,24 +4,16 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:20823",
-      "sslPort": 44330
+      "applicationUrl": "http://localhost:44330",
+      "sslPort": 0
     }
   },
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "weatherforecast",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
     "fattestSecret.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "launchUrl": "swagger/",
+      "applicationUrl": "http://localhost:44330",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
