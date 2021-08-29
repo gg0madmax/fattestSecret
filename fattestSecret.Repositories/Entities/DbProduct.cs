@@ -4,9 +4,9 @@ using System;
 namespace fattestSecret.Repositories.Entities
 {
     [Sql(Schema = "dbo")]
-    public class DbFood
+    public class DbProduct
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public decimal Kcals { get; set; }
         public decimal Proteins { get; set; }
