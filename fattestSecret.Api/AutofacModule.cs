@@ -1,7 +1,7 @@
 ﻿using Autofac;
-using fattestSecret.Api.V1.Controllers;
 using fattestSecret.Food;
 using fattestSecret.Repositories;
+using fattestSecret.Users;
 using Microsoft.Extensions.Configuration;
 using System;
 
@@ -25,6 +25,7 @@ namespace fattestSecret.Api
             }).As<DbConnectionSettings>().SingleInstance();
             builder.RegisterType<DbContext>().As<IDbContext>().InstancePerLifetimeScope();
             builder.RegisterType<FoodService>().As<IFoodService>().InstancePerLifetimeScope();
+            builder.RegisterType<UsersService>().As<IUsersService>().InstancePerLifetimeScope();
         }
     }
 }

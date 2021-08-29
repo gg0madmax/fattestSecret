@@ -6,7 +6,7 @@ namespace fattestSecret.Api.V2.Controllers
 {
     [ApiController]
     [ApiVersion(Consts.Ver2_0)]
-    [Route("{version:apiVersion}/Food")]
+    [Route("{version:apiVersion}/food")]
     [Produces("application/json")]
     public class FoodController : ControllerBase
     {
