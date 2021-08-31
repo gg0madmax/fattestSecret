@@ -6,5 +6,6 @@ namespace fattestSecret.Repositories
     {
         IDbVersion Versions { get; }
         IDbProduct Products { get; }
+        IDbUser Users { get; }
     }
 }
