@@ -1,7 +1,6 @@
 ﻿using Autofac;
-using fattestSecret.Food;
+using fattestSecret.Products;
 using fattestSecret.Repositories;
-using fattestSecret.Users;
 using Microsoft.Extensions.Configuration;
 using System;
 
@@ -24,8 +23,7 @@ namespace fattestSecret.Api
                 CommandTimeout = Convert.ToInt32(_configuration["Database:CommandTimeout"])
             }).As<DbConnectionSettings>().SingleInstance();
             builder.RegisterType<DbContext>().As<IDbContext>().InstancePerLifetimeScope();
-            builder.RegisterType<FoodService>().As<IFoodService>().InstancePerLifetimeScope();
-            builder.RegisterType<UsersService>().As<IUsersService>().InstancePerLifetimeScope();
+            builder.RegisterType<ProductsService>().As<IProductsService>().InstancePerLifetimeScope();
         }
     }
 }

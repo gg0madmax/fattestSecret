@@ -5,7 +5,6 @@ namespace fattestSecret.Repositories
     public interface IDbContext
     {
         IDbVersion Versions { get; }
-        IDbFood Food { get; }
-        IDbUser Users { get; }
+        IDbProduct Products { get; }
     }
 }

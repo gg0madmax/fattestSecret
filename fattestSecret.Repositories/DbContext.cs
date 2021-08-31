@@ -17,8 +17,7 @@ namespace fattestSecret.Repositories
         }
 
         public IDbVersion Versions => CreateRepository<IDbVersion>();
-        public IDbFood Food => CreateRepository<IDbFood>();
-        public IDbUser Users => CreateRepository<IDbUser>();
+        public IDbProduct Products => CreateRepository<IDbProduct>();
 
         public TRepository CreateRepository<TRepository>() where TRepository : class
         {
