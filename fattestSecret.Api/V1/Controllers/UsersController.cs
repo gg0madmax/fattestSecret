@@ -18,7 +18,7 @@ namespace fattestSecret.Api.V1.Controllers
         }
 
         [HttpGet]
-        [Route("GetUserById")]
+        [Route("get-user-by-id")]
         public async Task<IActionResult> GetUserByIdAsync(long id)
         {
             var user = await _usersService.GetUserByIdAsync(id);

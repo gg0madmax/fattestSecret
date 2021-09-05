@@ -6,7 +6,7 @@ namespace fattestSecret.Api.V2.Controllers
 {
     [ApiController]
     [ApiVersion(Consts.Ver2_0)]
-    [Route("{version:apiVersion}/Products")]
+    [Route("{version:apiVersion}/products")]
     [Produces("application/json")]
     public class ProductsController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace fattestSecret.Api.V2.Controllers
         }
 
         [HttpGet]
-        [Route("GetProductById")]
+        [Route("{id}")]
         public async Task<IActionResult> GetProductByIdAsync(long id)
         {
             var product = await _productsService.GetProductByIdAsync(id);

@@ -1,6 +1,6 @@
 ﻿namespace fattestSecret.Products.Models
 {
-    public class ChangeProductRequest : CreationProductRequest
+    public class UpdatingProductRequest : CreationProductRequest
     {
         public long Id { get; set; }
     }

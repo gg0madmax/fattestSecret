@@ -9,6 +9,6 @@ namespace fattestSecret.Products
         Task<Product> GetProductByIdAsync(long id);
         Task<List<Product>> GetProductsAsync();
         Task<Product> AddProductAsync(Product product);
-        Task ChangeProductAsync(Product product);
+        Task UpdateProductAsync(Product product);
     }
 }
