@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using fattestSecret.Products;
 using fattestSecret.Repositories;
+using fattestSecret.Users;
 using Microsoft.Extensions.Configuration;
 using System;
 
@@ -24,6 +25,7 @@ namespace fattestSecret.Api
             }).As<DbConnectionSettings>().SingleInstance();
             builder.RegisterType<DbContext>().As<IDbContext>().InstancePerLifetimeScope();
             builder.RegisterType<ProductsService>().As<IProductsService>().InstancePerLifetimeScope();
+            builder.RegisterType<UsersService>().As<IUsersService>().InstancePerLifetimeScope();
         }
     }
 }
