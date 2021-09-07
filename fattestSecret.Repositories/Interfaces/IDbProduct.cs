@@ -11,6 +11,6 @@ namespace fattestSecret.Repositories.Interfaces
         Task<DbProduct> GetProductByIdAsync(long dbId);
         Task<List<DbProduct>> GetProductsAsync();
         Task<long> AddProductAsync(DbProduct addProduct);
-        Task<DbProduct> ChangeProductAsync(DbProduct changeProduct);
+        Task<DbProduct> UpdateProductAsync(DbProduct updateProduct);
     }
 }

@@ -7,7 +7,7 @@ namespace fattestSecret.Api.V1.Controllers
 {
     [ApiController]
     [ApiVersion(Consts.Ver1_0)]
-    [Route("{version:apiVersion}/Products")]
+    [Route("{version:apiVersion}/products")]
     [Produces("application/json")]
     public class ProductsController : ControllerBase
     {
@@ -19,7 +19,7 @@ namespace fattestSecret.Api.V1.Controllers
         }
 
         [HttpGet]
-        [Route("GetProductById")]
+        [Route("{id}")]
         public async Task<IActionResult> GetProductByIdAsync(long id)
         {
             var product = await _productsService.GetProductByIdAsync(id);
@@ -31,7 +31,7 @@ namespace fattestSecret.Api.V1.Controllers
         }
 
         [HttpGet]
-        [Route("GetProducts")]
+        [Route("")]
         public async Task<IActionResult> GetProductsAsync()
         {
             var products = await _productsService.GetProductsAsync();
@@ -43,7 +43,7 @@ namespace fattestSecret.Api.V1.Controllers
         }
 
         [HttpPost]
-        [Route("AddProduct")]
+        [Route("")]
         public async Task<IActionResult> AddProductAsync(CreationProductRequest addProduct)
         {
             var product = new Product
@@ -62,20 +62,20 @@ namespace fattestSecret.Api.V1.Controllers
             return Ok(productAwait);
         }
 
-        [HttpPost]
-        [Route("ChangeProduct")]
-        public async Task<IActionResult> ChangeProductAsync(ChangeProductRequest changeProduct)
+        [HttpPut]
+        [Route("")]
+        public async Task<IActionResult> UpdateProductAsync(UpdatingProductRequest updateProduct)
         {
             var product = new Product
             {
-                Id = changeProduct.Id,
-                Name = changeProduct.Name,
-                Kcals = changeProduct.Kcals,
-                Proteins = changeProduct.Proteins,
-                Fats = changeProduct.Fats,
-                Carbohydrates = changeProduct.Carbohydrates
+                Id = updateProduct.Id,
+                Name = updateProduct.Name,
+                Kcals = updateProduct.Kcals,
+                Proteins = updateProduct.Proteins,
+                Fats = updateProduct.Fats,
+                Carbohydrates = updateProduct.Carbohydrates
             };
-            await _productsService.ChangeProductAsync(product);
+            await _productsService.UpdateProductAsync(product);
             return Ok();
         }
     }

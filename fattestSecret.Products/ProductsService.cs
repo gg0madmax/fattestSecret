@@ -65,7 +65,7 @@ namespace fattestSecret.Products
             return product;
         }
 
-        public async Task ChangeProductAsync(Product product)
+        public async Task UpdateProductAsync(Product product)
         {
             var dbProductRequest = new DbProduct
             {
@@ -77,7 +77,7 @@ namespace fattestSecret.Products
                 Carbohydrates = product.Carbohydrates,
                 UpdateDate = System.DateTime.Now
             };
-            await _dbContext.Products.ChangeProductAsync(dbProductRequest);
+            await _dbContext.Products.UpdateProductAsync(dbProductRequest);
         }
     }
 }

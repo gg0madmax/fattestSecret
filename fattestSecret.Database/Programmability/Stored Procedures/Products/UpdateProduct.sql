@@ -1,4 +1,4 @@
-﻿create procedure dbo.ChangeProduct
+﻿create procedure dbo.UpdateProduct
 @Id bigint,
 @Name nvarchar(300),
 @Kcals decimal(5,2),
