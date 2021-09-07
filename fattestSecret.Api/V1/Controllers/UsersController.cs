@@ -19,7 +19,7 @@ namespace fattestSecret.Api.V1.Controllers
         }
 
         [HttpGet]
-        [Route("get-user-by-id")]
+        [Route("{id}")]
         public async Task<IActionResult> GetUserByIdAsync(long id)
         {
             var user = await _usersService.GetUserByIdAsync(id);
@@ -31,7 +31,7 @@ namespace fattestSecret.Api.V1.Controllers
         }
 
         [HttpGet]
-        [Route("get-users")]
+        [Route("")]
         public async Task<IActionResult> GetUsersAsync()
         {
             var users = await _usersService.GetUsersAsync();
@@ -43,7 +43,7 @@ namespace fattestSecret.Api.V1.Controllers
         }
 
         [HttpPost]
-        [Route("add-user")]
+        [Route("")]
         public async Task<IActionResult> AddUserAsync(CreationUserRequest addUser)
         {
             var user = new User
@@ -61,7 +61,7 @@ namespace fattestSecret.Api.V1.Controllers
         }
 
         [HttpPut]
-        [Route("update-user")]
+        [Route("")]
         public async Task<IActionResult> UpdateUserAsync(UpdateUserRequest updateUser)
         {
             var user = new User
