@@ -6,8 +6,8 @@
 	Proteins decimal(5,2),
 	Fats decimal(5,2),
 	Carbohydrates decimal(5,2),
-	CreateDate datetime not null constraint Def_Products_CreateDate default getutcdate(),
-	UpdateDate datetime
+	CreateDate datetime2 not null constraint Def_Products_CreateDate default getutcdate(),
+	UpdateDate datetime2
 
 	constraint PK_Products primary key(Id)
 )

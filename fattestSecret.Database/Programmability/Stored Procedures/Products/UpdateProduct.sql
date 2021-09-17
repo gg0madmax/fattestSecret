@@ -5,7 +5,7 @@
 @Proteins decimal(5,2),
 @Fats decimal(5,2),
 @Carbohydrates decimal(5,2),
-@UpdateDate datetime
+@UpdateDate datetime2
 as
 	update dbo.Products
 	set [Name] = @Name, Kcals = @Kcals, Proteins = @Proteins, Fats = @Fats, Carbohydrates = @Carbohydrates, UpdateDate = @UpdateDate

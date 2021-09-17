@@ -4,7 +4,7 @@
 @UserLogin nvarchar(50),
 @Password nvarchar(50),
 @ConfirmPassword bit,
-@UpdateDate datetime
+@UpdateDate datetime2
 as
 	update dbo.Users
 	set [Email] = @Email, UserLogin = @UserLogin, [Password] = @Password, ConfirmPassword = @ConfirmPassword, UpdateDate = @UpdateDate
