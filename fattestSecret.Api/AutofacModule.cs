@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using fattestSecret.Products;
+using fattestSecret.Recipes;
 using fattestSecret.Repositories;
 using fattestSecret.Users;
 using Microsoft.Extensions.Configuration;
@@ -26,6 +27,7 @@ namespace fattestSecret.Api
             builder.RegisterType<DbContext>().As<IDbContext>().InstancePerLifetimeScope();
             builder.RegisterType<ProductsService>().As<IProductsService>().InstancePerLifetimeScope();
             builder.RegisterType<UsersService>().As<IUsersService>().InstancePerLifetimeScope();
+            builder.RegisterType<RecipesService>().As<IRecipesService>().InstancePerLifetimeScope();
         }
     }
 }

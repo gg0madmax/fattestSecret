@@ -1,6 +1,5 @@
 ﻿using Insight.Database;
 using System;
-using System.Threading.Tasks;
 
 namespace fattestSecret.Repositories.Entities
 {
